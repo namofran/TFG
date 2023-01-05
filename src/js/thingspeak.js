@@ -1,6 +1,8 @@
-/* eslint-disable no-var */ 
-/* eslint-disable semi */
-/* eslint-disable no-undef */  
+/* eslint-disable no-var*/ 
+/* eslint-disable semi*/
+/* eslint-disable no-undef*/
+/* eslint-disable no-unused-vars*/
+/* eslint-disable camelcase*/    
 class Thingspeak {
   url_base = 'https://api.thingspeak.com/channels/';
   feeds = 'feeds';
@@ -61,17 +63,17 @@ class Thingspeak {
     const promise = this.#connect(url, callback_ok_last, callback_err)
     return promise;
   }
-	// DATE FORMAT START "AAAA-MM-DD" END "AAAA-MM-DD"
-	// OK
-	get_frame_by_date (start, end) {
+  // DATE FORMAT START "AAAA-MM-DD" END "AAAA-MM-DD"
+  // OK
+  get_frame_by_date (start, end) {
     // example: https://api.thingspeak.com/channels/<channel_id>/feeds.<format>?start=...&end=...
     const parameters = 'start=' + start + '&end=' + end;
     const url = this.#build_url(this.feeds, parameters);
     const promise = this.#connect(url, callback_ok, callback_err);
     return promise;
-	}
-	// OK
-	get_field_by_date (field_name, start, end) {
+  }
+  // OK
+  get_field_by_date (field_name, start, end) {
     // example: https://api.thingspeak.com/channels/<channel_id>/fields/<field_id>.<format>?start...&end...
     const parameters = 'start=' + start + '&end=' + end;
     const url = this.#build_url(this.fields + '/' + field_name, parameters);

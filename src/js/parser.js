@@ -1,6 +1,7 @@
 // Data classes
-/* eslint-disable no-var */ 
-/* eslint-disable semi */ 
+/* eslint-disable no-var*/ 
+/* eslint-disable semi*/
+/* eslint-disable camelcase*/ 
 class IFrame {
   temperature = NaN;
   humidity = NaN;

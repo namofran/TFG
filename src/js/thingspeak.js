@@ -42,7 +42,7 @@ class Thingspeak {
   get_field (field_name) {
     // example: https://api.thingspeak.com/channels/<channel_id>/fields/<field_id>.<format>
     const url = this.#build_url(this.fields + '/' + field_name);
-    const promise = this.#connect(url, callback_ok, callback_err);
+    const promise = this.#connect(url);
     return promise;
   }
 
@@ -50,7 +50,7 @@ class Thingspeak {
   get_latest_frame () {
     // example: https://api.thingspeak.com/channels/<channel_id>/feeds/last.<format>
     const url = this.#build_url(this.feeds + '/last');
-    const promise = this.#connect(url, callback_ok, callback_err);
+    const promise = this.#connect(url);
     return promise;
   }
 
@@ -58,7 +58,7 @@ class Thingspeak {
   get_latest_field (field_name) {
     // example: https://api.thingspeak.com/channels/<channel_id>/fields/<field_id>/last.<format>
     const url = this.#build_url(this.fields + '/' + field_name + '/last');
-    const promise = this.#connect(url, callback_ok_last, callback_err)
+    const promise = this.#connect(url)
     return promise;
   }
 
@@ -68,7 +68,7 @@ class Thingspeak {
     // example: https://api.thingspeak.com/channels/<channel_id>/feeds.<format>?start=...&end=...
     const parameters = 'start=' + start + '&end=' + end;
     const url = this.#build_url(this.feeds, parameters);
-    const promise = this.#connect(url, callback_ok, callback_err);
+    const promise = this.#connect(url);
     return promise;
   }
 
@@ -77,7 +77,7 @@ class Thingspeak {
     // example: https://api.thingspeak.com/channels/<channel_id>/fields/<field_id>.<format>?start...&end...
     const parameters = 'start=' + start + '&end=' + end;
     const url = this.#build_url(this.fields + '/' + field_name, parameters);
-    const promise = this.#connect(url, callback_ok, callback_err);
+    const promise = this.#connect(url);
     return promise;
   }
 
@@ -85,7 +85,10 @@ class Thingspeak {
     // example: https://api.thingspeak.com/channels/<channel_id>/fields/<field_id>.<format>
     const parameters = 'minutes=' + minutes
     const url = this.#build_url(this.fields + '/' + field_name, parameters);
-    const promise = this.#connect(url, callback_ok, callback_err);
+    const promise = this.#connect(url);
     return promise;
   }
 }
+
+//node.js export. Needed for unit testing
+module.exports = {Thingspeak};

@@ -58,7 +58,7 @@ function ParserTime (DateJSON) {
   const parsed_date = raw_date.toLocaleString('es-ES', { timeStyle: 'short', hour12: false, timeZone: 'Europe/Madrid' });
   return parsed_date;
 }
-function parser_last (str) {	
+function parser_last (str) {
   var DatosJSON = str.field4;
   var DateJSON = str.created_at; // eslint-disable-line no-unused-vars
   var frames = [];

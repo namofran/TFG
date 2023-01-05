@@ -24,26 +24,20 @@ class Thingspeak {
   //
   // "params != "" ? "?" + params : """ ------> if params is different of "" then ?params if not ""//
   #build_url (endpoint, params = '') {
-
     const p = params != '' ? '?' + params : '';
     const url = this.url_base + this.channel_id + '/' + endpoint + '.' + this.format + p;
-
     this.last_endpoint = endpoint;
     this.last_format = this.format;
-
     console.log(url);
     return url;
   }
-  // !
   // Method: connect
   // Perform the FETCH request.
   // Return data
-  //
   #connect (url) {
-    
     switch (this.last_format) {
       case 'json':
-      return fetch(url).then(blob => blob.json());
+        return fetch(url).then(blob => blob.json());
     }
   }
   // OK

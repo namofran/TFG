@@ -1,5 +1,5 @@
 // Data classes
-/* eslint-disable no-var, semi, camelcase, no-unused-vars, no-trailing-spaces */  
+/* eslint-disable no-var, semi, camelcase, no-unused-vars, no-trailing-spaces */
 class IFrame {
   temperature = NaN;
   humidity = NaN;
@@ -9,6 +9,7 @@ class IFrame {
   time = NaN;
   constructor () {} // eslint-disable-line no-useless-constructor
 }
+
 class Frame_v1 extends IFrame {
   temperature = NaN;
   humidity = NaN;
@@ -21,6 +22,7 @@ class Frame_v1 extends IFrame {
     super();
   }
 }
+
 //
 // Parser classes.
 // For new parsers, extend from IParser
@@ -30,6 +32,7 @@ class IParser {
     throw new Error('Abstract Method has no implementation');
   }
 }
+
 class Parser_v1 extends IParser {
   parser (str) {
     var frames = []; 
@@ -49,11 +52,13 @@ class Parser_v1 extends IParser {
     return frames;
   }
 }
+
 function ParserTime (DateJSON) {
   const raw_date = new Date(DateJSON);
   const parsed_date = raw_date.toLocaleString('es-ES', { timeStyle: 'short', hour12: false, timeZone: 'Europe/Madrid' });
   return parsed_date;
 }
+
 function parser_last (str) {
   var DatosJSON = str.field4;
   var DateJSON = str.created_at; // eslint-disable-line no-unused-vars
@@ -70,5 +75,6 @@ function parser_last (str) {
   frames.push(pressure);
   return frames;
 }
+
 // node.js export. Needed for unit testing
 module.exports = { IFrame, Frame_v1, IParser, Parser_v1 };

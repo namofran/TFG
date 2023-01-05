@@ -1,4 +1,4 @@
-/* eslint-disable no-var, semi, no-undef, no-unused-vars, camelcase */    
+/* eslint-disable no-var, semi, no-undef, no-unused-vars, camelcase */
 class Thingspeak {
   url_base = 'https://api.thingspeak.com/channels/';
   feeds = 'feeds';
@@ -12,13 +12,13 @@ class Thingspeak {
     this.channel_id = channel_id;
     this.format = format;
   }
-  //
+
   // Method: build_url
   // Return a string representing an URL by concatenating different fields:
   // - endpoint: web to ask for, for instance, feeds
   // - params: url parameters, for instance, "start" and "end". It must follow the url name convention (example: "results=120&average=60")
   //
-  // "params != "" ? "?" + params : """ ------> if params is different of "" then ?params if not ""//
+  // "params != "" ? "?" + params : """ ------> if params is different of "" then ?params if not ""
   #build_url (endpoint, params = '') {
     const p = params !== '' ? '?' + params : '';
     const url = this.url_base + this.channel_id + '/' + endpoint + '.' + this.format + p;
@@ -27,7 +27,7 @@ class Thingspeak {
     console.log(url);
     return url;
   }
-  
+
   // Method: connect
   // Perform the FETCH request.
   // Return data

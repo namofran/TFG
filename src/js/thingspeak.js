@@ -27,6 +27,7 @@ class Thingspeak {
     console.log(url);
     return url;
   }
+  
   // Method: connect
   // Perform the FETCH request.
   // Return data
@@ -36,6 +37,7 @@ class Thingspeak {
         return fetch(url).then(blob => blob.json());
     }
   }
+
   // OK
   get_field (field_name) {
     // example: https://api.thingspeak.com/channels/<channel_id>/fields/<field_id>.<format>
@@ -43,6 +45,7 @@ class Thingspeak {
     const promise = this.#connect(url, callback_ok, callback_err);
     return promise;
   }
+
   // OK
   get_latest_frame () {
     // example: https://api.thingspeak.com/channels/<channel_id>/feeds/last.<format>
@@ -50,6 +53,7 @@ class Thingspeak {
     const promise = this.#connect(url, callback_ok, callback_err);
     return promise;
   }
+
   // OK
   get_latest_field (field_name) {
     // example: https://api.thingspeak.com/channels/<channel_id>/fields/<field_id>/last.<format>
@@ -57,6 +61,7 @@ class Thingspeak {
     const promise = this.#connect(url, callback_ok_last, callback_err)
     return promise;
   }
+
   // DATE FORMAT START "AAAA-MM-DD" END "AAAA-MM-DD"
   // OK
   get_frame_by_date (start, end) {
@@ -66,6 +71,7 @@ class Thingspeak {
     const promise = this.#connect(url, callback_ok, callback_err);
     return promise;
   }
+
   // OK
   get_field_by_date (field_name, start, end) {
     // example: https://api.thingspeak.com/channels/<channel_id>/fields/<field_id>.<format>?start...&end...
@@ -74,6 +80,7 @@ class Thingspeak {
     const promise = this.#connect(url, callback_ok, callback_err);
     return promise;
   }
+
   get_field_by_time (field_name, minutes) {
     // example: https://api.thingspeak.com/channels/<channel_id>/fields/<field_id>.<format>
     const parameters = 'minutes=' + minutes
@@ -82,4 +89,3 @@ class Thingspeak {
     return promise;
   }
 }
-

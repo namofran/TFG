@@ -1,7 +1,7 @@
 //Data classes
 /*eslint-disable no-var*/ 
 /*eslint-disable semi*/ 
-class IFrame{
+class IFrame {
   temperature = NaN;
   humidity = NaN;
   pressure = NaN;
@@ -10,7 +10,7 @@ class IFrame{
   time = NaN;
   constructor () {} // eslint-disable-line no-useless-constructor
 }
-class Frame_v1 extends IFrame{
+class Frame_v1 extends IFrame {
   temperature = NaN;
   humidity = NaN;
   pressure = NaN;

@@ -28,6 +28,11 @@ jobs:
         run: |
           npm install jest
           
+      - name: Install fetch
+        working-directory: ./${{env.TEST_FOLDER}}
+        run: |
+          npm install fetch
+          
       - name: Run tests
         working-directory: ./${{env.TEST_FOLDER}}
         run: |

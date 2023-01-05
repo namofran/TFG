@@ -1,9 +1,5 @@
 // Data classes
-/* eslint-disable no-var */ 
-/* eslint-disable semi */
-/* eslint-disable camelcase */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-trailing-spaces */  
+/* eslint-disable no-var, semi, camelcase, no-unused-vars, no-trailing-spaces */  
 class IFrame {
   temperature = NaN;
   humidity = NaN;
@@ -76,5 +72,3 @@ function parser_last (str) {
 }
 // node.js export. Needed for unit testing
 module.exports = { IFrame, Frame_v1, IParser, Parser_v1 };
-/* eslint-enable no-var */
-/* eslint-enable semi */  

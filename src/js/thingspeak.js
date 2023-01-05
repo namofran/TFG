@@ -1,8 +1,4 @@
-/* eslint-disable no-var */ 
-/* eslint-disable semi */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-/* eslint-disable camelcase */    
+/* eslint-disable no-var, semi, no-undef, no-unused-vars, camelcase */    
 class Thingspeak {
   url_base = 'https://api.thingspeak.com/channels/';
   feeds = 'feeds';
@@ -24,7 +20,7 @@ class Thingspeak {
   //
   // "params != "" ? "?" + params : """ ------> if params is different of "" then ?params if not ""//
   #build_url (endpoint, params = '') {
-    const p = params != '' ? '?' + params : '';
+    const p = params !== '' ? '?' + params : '';
     const url = this.url_base + this.channel_id + '/' + endpoint + '.' + this.format + p;
     this.last_endpoint = endpoint;
     this.last_format = this.format;
@@ -86,5 +82,4 @@ class Thingspeak {
     return promise;
   }
 }
-/* eslint-enable no-var */
-/* eslint-enable semi */  
+

@@ -1,6 +1,6 @@
-//Data classes
-/*eslint-disable no-var*/ 
-/*eslint-disable semi*/ 
+// Data classes
+/* eslint-disable no-var */ 
+/* eslint-disable semi */ 
 class IFrame {
   temperature = NaN;
   humidity = NaN;
@@ -71,8 +71,7 @@ function parser_last (str) {
   frames.push(pressure);
   return frames;
 }
-
-//node.js export. Needed for unit testing
+// node.js export. Needed for unit testing
 module.exports = { IFrame, Frame_v1, IParser, Parser_v1 };
-/*eslint-enable no-var*/
-/*eslint-enable semi*/  
+/* eslint-enable no-var */
+/* eslint-enable semi */  

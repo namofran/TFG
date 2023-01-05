@@ -1,4 +1,5 @@
 const thingspeak = require('../src/js/thingspeak.js'); // import the DUT file here
+const fetch = require("node-fetch");
 
 function callback_ok(data){}
 function callback_err(data){}

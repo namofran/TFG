@@ -31,7 +31,7 @@ jobs:
       - name: Install fetch
         working-directory: ./${{env.TEST_FOLDER}}
         run: |
-          npm install fetch
+           npm install node-fetch
           
       - name: Run tests
         working-directory: ./${{env.TEST_FOLDER}}

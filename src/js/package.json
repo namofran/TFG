@@ -1,0 +1,27 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chart.min.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/namofran/TFG-Francisco-Navarro-Molina.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/namofran/TFG-Francisco-Navarro-Molina/issues"
+  },
+  "homepage": "https://github.com/namofran/TFG-Francisco-Navarro-Molina#readme",
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.4.0",
+    "eslint-plugin-promise": "^6.1.1"
+  }
+}
+
